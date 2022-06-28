@@ -8,7 +8,7 @@ import '../styles/spinner.css';
 
 const RutaProtegida = () => {
 	const { auth, cargando } = useAuth();
-	if (cargando) return 'Cargando...';
+	if (cargando) return <Spinner />;
 
 	return (
 		<>

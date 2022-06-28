@@ -4,10 +4,10 @@ import PreviewProyecto from '../components/PreviewProyecto';
 import { useEffect } from 'react';
 
 const Proyectos = () => {
-	const { proyectos } = useProyectos();
-	// useEffect(() => {
-	// 	obtenerProyectos();
-	// }, []);
+	const { proyectos, obtenerProyectos } = useProyectos();
+	useEffect(() => {
+		obtenerProyectos();
+	}, []);
 
 	return (
 		<>

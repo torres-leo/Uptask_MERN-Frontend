@@ -30,11 +30,12 @@ const AuthProvider = ({ children }) => {
 				// navigate('/proyectos');
 			} catch (error) {
 				setAuth({});
+			} finally {
+				setCargando(false);
 			}
-			setCargando(false);
 		};
 		// colocamos un return con arrow function para que el useEffect no se ejecute dos veces debido al modo estricto
-		return () => autenticarUsuario();
+		autenticarUsuario();
 	}, []);
 
 	const cerrarSesionAuth = () => {
