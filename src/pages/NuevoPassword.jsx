@@ -24,7 +24,7 @@ const NuevoPassword = () => {
 				});
 			}
 		};
-		return () => comprobarToken();
+		comprobarToken();
 	}, []);
 
 	const handleSubmit = async (e) => {

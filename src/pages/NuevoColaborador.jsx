@@ -9,7 +9,7 @@ const NuevoColaborador = () => {
 	const { obtenerProyecto, proyecto, cargando, colaborador, agregarColaborador } = useProyectos();
 	const params = useParams();
 	useEffect(() => {
-		return () => obtenerProyecto(params.id);
+		obtenerProyecto(params.id);
 	}, []);
 
 	if (!proyecto?._id) return <div className='text-center text-xl text-red-500 uppercase'>Proyecto no encontrado</div>;

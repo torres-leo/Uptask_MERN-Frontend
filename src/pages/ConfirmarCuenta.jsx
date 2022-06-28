@@ -31,7 +31,7 @@ const ConfirmarCuenta = () => {
 			}
 		};
 		// retornaremos por un arrow function para que el componente solo renderice una vez
-		return () => confirmarCuenta();
+		confirmarCuenta();
 	}, []);
 
 	const { msg } = alerta;

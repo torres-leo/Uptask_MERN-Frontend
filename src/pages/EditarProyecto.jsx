@@ -13,7 +13,7 @@ const EditarProyecto = () => {
 	const { nombre } = proyecto;
 
 	useEffect(() => {
-		return () => obtenerProyecto(params.id);
+		obtenerProyecto(params.id);
 	}, []);
 
 	const handleClickEliminar = () => {
