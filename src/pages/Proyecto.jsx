@@ -36,7 +36,7 @@ const Proyecto = () => {
 	const { nombre, descripcion } = proyecto;
 
 	useEffect(() => {
-		return () => obtenerProyecto(params.id);
+		obtenerProyecto(params.id);
 	}, []);
 
 	useEffect(() => {
