@@ -8,11 +8,13 @@ import '../styles/spinner.css';
 
 const RutaProtegida = () => {
 	const { auth, cargando } = useAuth();
-	if (cargando) return <Spinner />;
+	// if (cargando) return <Spinner />;
 
 	return (
 		<>
-			{auth._id ? (
+			{cargando ? (
+				<Spinner />
+			) : auth._id ? (
 				<div className='bg-gray-200'>
 					<Header />
 					<div className='md:flex md:min-h-screen'>

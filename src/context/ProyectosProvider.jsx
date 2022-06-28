@@ -1,12 +1,12 @@
 import { useState, useEffect, createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { clienteAxios } from '../config/clienteAxios';
+import useAuth from '../hooks/useAuth';
 import io from 'socket.io-client';
 
 let socket;
 
 const ProyectosContext = createContext();
-
 const ProyectosProvider = ({ children }) => {
 	const [proyectos, setProyectos] = useState([]);
 	const [alerta, setAlerta] = useState({});
@@ -20,52 +20,53 @@ const ProyectosProvider = ({ children }) => {
 	const [buscador, setBuscador] = useState(false);
 
 	const navigate = useNavigate();
+	const { Auth } = useAuth();
 
 	// Si coloco la funcion dentro del useEffect, cuando inicie sesion no me traera los proyectos hasta que recargue la pagina, pero al depender de Auth, este se vuelve ejecutar cuando detecta al usuario
-	// useEffect(() => {
-	// 	const obtenerProyectos = async () => {
-	// 		try {
-	// 			const token = localStorage.getItem('token');
-	// 			if (!token) return;
+	useEffect(() => {
+		const obtenerProyectos = async () => {
+			try {
+				const token = localStorage.getItem('token');
+				if (!token) return;
 
-	// 			const config = {
-	// 				headers: {
-	// 					'Content-Type': 'application/json',
-	// 					Authorization: `Bearer ${token}`,
-	// 				},
-	// 			};
+				const config = {
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `Bearer ${token}`,
+					},
+				};
 
-	// 			const { data } = await clienteAxios('/proyectos', config);
-	// 			setProyectos(data);
-	// 		} catch (error) {
-	// 			console.log(error);
-	// 		}
-	// 	};
-	// 	return () => obtenerProyectos();
-	// }, []);
+				const { data } = await clienteAxios('/proyectos', config);
+				setProyectos(data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		return () => obtenerProyectos();
+	}, [Auth]);
 
 	useEffect(() => {
 		socket = io(import.meta.env.VITE_BACKEND_URL);
 	}, []);
 
-	const obtenerProyectos = async () => {
-		try {
-			const token = localStorage.getItem('token');
-			if (!token) return;
+	// const obtenerProyectos = async () => {
+	// 	try {
+	// 		const token = localStorage.getItem('token');
+	// 		if (!token) return;
 
-			const config = {
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${token}`,
-				},
-			};
+	// 		const config = {
+	// 			headers: {
+	// 				'Content-Type': 'application/json',
+	// 				Authorization: `Bearer ${token}`,
+	// 			},
+	// 		};
 
-			const { data } = await clienteAxios('/proyectos', config);
-			setProyectos(data);
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	// 		const { data } = await clienteAxios('/proyectos', config);
+	// 		setProyectos(data);
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// };
 
 	const mostrarAlerta = (alerta) => {
 		setAlerta(alerta);
@@ -490,7 +491,7 @@ const ProyectosProvider = ({ children }) => {
 				mostrarAlerta,
 				alerta,
 				submitProyecto,
-				obtenerProyectos,
+				// obtenerProyectos,
 				obtenerProyecto,
 				proyecto,
 				cargando,
