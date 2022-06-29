@@ -15,10 +15,7 @@ o cambiando de estado una tarea.
 Link al proyecto: [ Uptask ](https://adminprojects-leo-torres.netlify.app)
 
 **Credenciales**
-- leo@correo.com
-  123456
-
-- prueba@correo.com
-  123456
+- correo: leo@correo.com , contraseña: 123456
+- correo: prueba@correo.com , contraseña: 123456
  
 
