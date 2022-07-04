@@ -12,9 +12,9 @@ Stack: MERN, tailwindcss, headless UI, Context API, socket io.
 La implementación de socket io la pueden ver accediendo en ambas cuentas, entrando al mismo proyecto que tengan en común y agregando/editando/eliminando 
 o cambiando de estado una tarea.
 
-Link al proyecto: [ Uptask ](https://adminprojects-leo-torres.netlify.app). ***Recuerda abrirlo en otra pestaña del navegador***
+Link al proyecto: [ Uptask ](https://adminprojects-leo-torres.netlify.app). ***Recuerda abrirlo en otra pestaña del navegador***.
 
-**Credenciales**
+**Credenciales / credentials**
 - correo: leo@correo.com , contraseña: 123456
 - correo: prueba@correo.com , contraseña: 123456
  
