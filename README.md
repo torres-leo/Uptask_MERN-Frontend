@@ -1,5 +1,5 @@
 # Uptask_MERN-Frontend
-## MERN stack, con TailwindCSS, Headless UI, Context API, socket io.
+### MERN stack, con TailwindCSS, Headless UI, Context API, socket io.
 
 La pagina es un administrador de proyectos, donde podrán gestionarlos e ir asignando tareas según las requieran, 
 también se puede agregar otras personas como ayudantes/colaboradores/trabajadores que esten asociados al proyecto.
