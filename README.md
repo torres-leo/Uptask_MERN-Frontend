@@ -1,4 +1,9 @@
-# Uptask_MERN-Frontend
+# IMPORTANT README !!!!
+
+**Credenciales / credentials**
+- correo: leo@correo.com , contraseña: 123456
+- correo: prueba@correo.com , contraseña: 123456
+
 ### MERN stack, con TailwindCSS, Headless UI, Context API, socket io.
 
 La pagina es un administrador de proyectos, donde podrán gestionarlos e ir asignando tareas según las requieran, 
@@ -14,8 +19,6 @@ o cambiando de estado una tarea.
 
 Link al proyecto: [ Uptask ](https://adminprojects-leo-torres.netlify.app). ***Recuerda abrirlo en otra pestaña del navegador***.
 
-**Credenciales / credentials**
-- correo: leo@correo.com , contraseña: 123456
-- correo: prueba@correo.com , contraseña: 123456
+
  
 
